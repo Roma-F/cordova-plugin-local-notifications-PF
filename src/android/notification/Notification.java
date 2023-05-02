@@ -226,7 +226,7 @@ public final class Notification {
                 continue;
 
             PendingIntent pi = PendingIntent.getBroadcast(
-                    context, 0, intent, FLAG_UPDATE_CURRENT);
+                    context, 0, intent, FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
             try {
                 switch (options.getPrio()) {
