@@ -204,11 +204,7 @@ public final class Builder {
         int reqCode = random.nextInt();
         // request code and flags not added for demo purposes
         PendingIntent pendingIntent;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            pendingIntent = PendingIntent.getActivity(context, reqCode, intent, PendingIntent.FLAG_IMMUTABLE | FLAG_UPDATE_CURRENT);
-        } else {
-            pendingIntent = PendingIntent.getActivity(context, reqCode, intent, FLAG_UPDATE_CURRENT);
-        }
+        pendingIntent = PendingIntent.getActivity(context, reqCode, intent, PendingIntent.FLAG_IMMUTABLE | FLAG_UPDATE_CURRENT);
 
         builder.setFullScreenIntent(pendingIntent, true);
     }
